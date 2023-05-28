@@ -45,7 +45,6 @@ class Program
         return count;
     }
 
-    // dodawanie zmian do pliku tekstowego
     static string AddPostfixToFilePath(string filePath, string postfix)
     {
         string directory = Path.GetDirectoryName(filePath);
