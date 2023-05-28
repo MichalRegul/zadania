@@ -7,18 +7,18 @@ using System.Text;
     {
         static void Main(string[] args)
         {
-            // pobranie ścieżki do zapisu pliku od użytkownika
+           
             Console.Write("Podaj ścieżkę do zapisu pliku: ");
             string outputPath = Console.ReadLine();
 
-            // wygenerowanie nazwy pliku na podstawie bieżącej daty i godziny
+           
             string timestamp = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss").Replace("-", "_").Replace(":", "_");
             string fileName = $"users-{timestamp}.csv";
 
-            // pełna ścieżka do pliku
+            
             string filePath = Path.Combine(outputPath, fileName);
 
-            // generowanie i zapisywanie użytkowników do pliku CSV
+            
             GenerateUsers(filePath, 100);
 
             Console.WriteLine("Generowanie użytkowników zakończone.");
@@ -26,13 +26,13 @@ using System.Text;
             Console.ReadLine();
         }
 
-        // generowanie użytkowników
+    
         static void GenerateUsers(string filePath, int count)
         {
-            // tworzenie nagłówka pliku CSV
+            
             string[] header = { "LP", "Imię", "Nazwisko", "Rok urodzenia" };
 
-            // generowanie użytkowników
+           
             Random random = new Random();
             StringBuilder csvData = new StringBuilder();
 
@@ -50,7 +50,7 @@ using System.Text;
                 csvData.AppendLine(string.Join(",", user));
             }
 
-            // zapisywanie danych do pliku CSV
+         
             File.WriteAllText(filePath, csvData.ToString());
         }
 
