@@ -5,7 +5,7 @@ class Program
 {
     static void Main()
     {
-        // Podajemy dowolną ściężkę pliku tekstowego
+        
         string filePath = "C:\\zamienianie.txt";
 
         string originalWord = "praca";
@@ -15,7 +15,7 @@ class Program
         string content = File.ReadAllText(filePath);
         int count = counthowmany(content, originalWord);
 
-        // testujemy czy w danym pliku tekstowym występuję słowo "praca" 5 razy
+       
         if (count == 5)
         {
             string replacedContent = content.Replace(originalWord, replacementWord);
